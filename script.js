@@ -4,7 +4,7 @@ const red = "#D80000"
 let total = 0
 
 
-
+/* Função para diminuir a quantidade dos acompanhamentos  */
 function Diminuir(id,rmvSvgId) {
     const elemento = document.getElementById(id)
     const innerTextNumber = Number(elemento.innerText)
@@ -27,6 +27,7 @@ function Diminuir(id,rmvSvgId) {
 }
 
 
+/* Função para aumentar a quantidade dos acompanhamentos  */
 function Aumentar(id,rmvSvgId) {
     const elemento = document.getElementById(id)
     const innerTextNumber = Number(elemento.innerText)
@@ -54,6 +55,7 @@ function Aumentar(id,rmvSvgId) {
 
 }
 
+/* Função responsável por atribuir cor ao svg*/
 function transformColorGray() {
     const idsDeAddSVG = ['addCheddar','addCrispy','addMolhoCheddar', 'addMolhoPicanha']
         
@@ -65,7 +67,7 @@ function transformColorGray() {
 
 }
 
-
+/* Função responsável por atribuir cor ao svg*/
 function transformColorRed() {
     const idsDeAddSVG = ['addCheddar','addCrispy','addMolhoCheddar', 'addMolhoPicanha']
         
@@ -77,6 +79,7 @@ function transformColorRed() {
 
 }
 
+/* Função responsável por atribuir cor ao svg*/
 function transformMinusToRed() {
     const idsDeRmvSVG = ['rmvCheddar','rmvCrispy','rmvMolhoCheddar', 'rmvMolhoPicanha']
         
@@ -88,7 +91,7 @@ function transformMinusToRed() {
 }
 
 
-
+/* Função responsável por diminuir a quantidade de itens do pedido */
 function rmvOrder() {
     const elementoOrder = document.getElementById('numberOrder')
     const innerTextNumber = Number(elementoOrder.innerText)
@@ -104,6 +107,7 @@ function rmvOrder() {
   
 }
 
+/* Função responsável por aumentar a quantidade de itens do pedido */
 function addOrder(){
     const elementoOrder = document.getElementById('numberOrder')
     const innerTextNumber = Number(elementoOrder.innerText)
@@ -120,7 +124,7 @@ function addOrder(){
 
 
 
-
+/* Abertura do modal */
 const Modal = {
     
     open() {
@@ -136,7 +140,7 @@ const Modal = {
         else {
         document.querySelector('.modalOverlay').classList.add('active')
 
-        setTimeout(function() {
+        setTimeout(()=> {
             document.querySelector('.modalOverlay').classList.remove('active')},5000
         )
          createElement()
@@ -144,7 +148,7 @@ const Modal = {
     }
 }
 
-
+/*Passando a lista dinâmica parao modal */
 function createElement(){
     const listaAcompanhamentos = ['queijoCheddar','cebolaCrispy','molhoCheddar', 'molhoPicanha']
     let lists = `<li>1 Carne 250gr </li>
@@ -157,14 +161,15 @@ function createElement(){
             return
         }
         else {
-        lists += `<li>${quantidadeLista} ${mudaNome(id)}</li>  ` 
+        lists += `<li>${quantidadeLista} ${changeName(id)}</li>  ` 
         }
      })
   
         list.innerHTML = lists
 }
 
-function mudaNome(id) {
+/* Atribuindo o nome correto do acompanhamento */
+function changeName(id) {
     switch (id) {
        case 'queijoCheddar':
           return "Queijo Cheddar";
