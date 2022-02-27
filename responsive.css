@@ -1,16 +1,71 @@
-@media screen and (max-width:700px){
-    main{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+@media screen and (max-width: 1280px){
+
+    .Container {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
     }
 
-   
+    main {
+        display: flex;
+        justify-content: space-around;
+        width: 100vw;
+    }
+  .Oferta {
+    display: flex;
+    align-items: center;
+    width: 100vw;
+  }
 
+  .Oferta img {
+    width: 100%
+  }
+ 
+ 
 }
 
-/*@media screen and (min-width:1000px){
-    .sinopse{
-        width: 50%;
-    }
+@media screen and (max-width: 600px){
+
+.Container {
+    
+}
+
+.Logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+.Inputs {
+    display: none;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    gap: 16px;
+}
+
+.Oferta {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    white-space: pre-line;
+    
+}
+
+ 
+
+.nav {
+    
+  
+}
+
+
+
+
+
 }
