@@ -1,41 +1,120 @@
-@media screen and (max-width: 1280px){
-
-    .Container {
+@media screen and (min-width: 1280px){
+    main {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
+        gap: 20%;
+    }
+    .Offer img {
+        margin-left: -6%;
+      }
+      .colorGray {
         width: 100%;
     }
+}
+
+
+@media screen and (max-width: 1280px){
+    .Container {
+        justify-content: center;
+    }
+    .Select {
+        width: 100px;
+    }
+    .Input {
+        display: none;
+    }
+
+    .Input2{
+        
+        visibility: visible;
+        width: 15%;
+        height: 48px;
+    }
+    .Input2::placeholder{
+        padding: 0;
+    }
+
+  
+  
 
     main {
         display: flex;
-        justify-content: space-around;
-        width: 100vw;
+        width: 100%;
     }
-  .Oferta {
-    display: flex;
-    align-items: center;
-    width: 100vw;
-  }
 
-  .Oferta img {
+  .Offer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .Offer img {
     width: 100%
   }
  
+.colorGray {
+    width: 100%;
+}
+
+.Nav {
+  width: 40%;
+}
+.Requests {
+    width: 100%;
+}
+
+.Requests header {
+    width: 100%;
+}
+
+.Item {
+    padding-left:  0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+   
+}
+
+.Value {
+    width: 100%;
+
+}
+.Utensils {
+    width: 100%;
+}
+
+.Increase {
+    width: 100%;
+}
+
  
 }
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 912px){
+
+
+
+ html {
+     font-size: 14px;
+ }
 
 .Container {
-    
-}
-
-.Logo {
-    display: flex;
     align-items: center;
     justify-content: center;
-    margin: auto;
+    gap: 24%;
 }
+.Logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.arrowLeft {
+    visibility: visible;
+    margin-left: 6%;
+}
+
 .Inputs {
     display: none;
 }
@@ -44,28 +123,59 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    margin-bottom: 10px;
-    gap: 16px;
+    margin-bottom: 2%;
+    gap: 10px;
 }
 
-.Oferta {
+.Nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
+}
+.Requests {
+    width: 100%;
+    
+}
+
+.Requests header {
+    width: 100%;
+}
+
+.Item {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    
+   
+}
+
+.Value {
+    width: 100%;
+
+}
+
+
+.Offer {
     display: flex;
     align-items: center;
     text-align: center;
-    white-space: pre-line;
-    
+    white-space: pre-line; 
+}
+.Utensils {
+    width: 100%;
+}
+.Radio {
+    width: 100%;
+    height: 10%;
+    visibility: visible;
+    justify-content: space-between;
 }
 
- 
-
-.nav {
-    
-  
+.Increase {
+    width: 100%;
+    justify-content: space-between;
+   
 }
-
-
-
-
 
 }

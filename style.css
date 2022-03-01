@@ -17,11 +17,10 @@
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
 }
 
-.arrowleft {
-    width:7.41px;
-    height:12px;
-    background-color:#686868;
-    display: none;
+.arrowLeft {
+    width:0;
+    height:0;
+    visibility: hidden;
 }
 
 .Logo {
@@ -30,6 +29,9 @@
     height: 48px;
     margin-left: 40px;
     margin-right: 124.77px;
+    align-items: center;
+    justify-content: space-between;
+
 }
 
 .Logo img {
@@ -37,10 +39,6 @@
     height: 100%;
     object-fit: contain;
 }
-
-
-
-
 
 
 /*HEADER INPUTS(itens) */
@@ -55,7 +53,7 @@ select{
     border: none;
 }
 
-.select {
+.Select {
     background-color: white;
     width: 230px;
     height: 48px;
@@ -67,7 +65,7 @@ select{
     
 }
 
-.Entrega {
+.Delivery {
     font-family: Roboto;
     font-weight: 400;
     font-style: normal;
@@ -76,14 +74,13 @@ select{
     color: #D80000;
 }
 
-.Rua {
+.Street {
     font-family: Roboto;
     font-style: normal;
     font-weight: bold;
     font-size: 12px;
     color: #656363;
 }
-
 
 .Arrow {
     display: flex;
@@ -92,7 +89,7 @@ select{
 }
 
 
-.input {
+.Input {
     width: 354px;
     height: 48px;
     border-color: red;
@@ -101,20 +98,35 @@ select{
     
 }
 
-.input::placeholder{
+.Input2 {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+    border-color: red;
+    border-radius: 4px;
+    border: 1px red solid;
+}
+.Input2::placeholder{
     font-family: Roboto;
     font-weight: 400;
     padding-left: 16.25px;
     padding-right: 18.75px;
 }
 
-.Usuario {
+.Input::placeholder{
+    font-family: Roboto;
+    font-weight: 400;
+    padding-left: 16.25px;
+    padding-right: 18.75px;
+}
+
+.User {
     display: flex;
     gap: 8px;
     align-items: center;
     
 }
-.Usuario p {
+.User p {
     color: #ED3237;
     font-family: Roboto;
     font-style: normal;
@@ -140,17 +152,16 @@ select{
     font-size: 10px;
     }
 
-.circle{
+.Circle{
     position:relative;
     margin-bottom: 34px;
 }
 
-.carrinho {
+.Car {
     position: absolute;
 }
 
 /* Conteudo principal */
-
 
 main {
     width: 100%;
@@ -161,26 +172,25 @@ main {
     padding: 0 43px 0 43px;
 }
 
-
-.Oferta {
-    width: 75%;
+.Offer {
+    width: 597px;
     height: 662px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     padding: 24px 0px;
-    gap: 2rem;
+    gap: 32px;
     object-fit: contain;
 }
 
-.Oferta h1 {
+.Offer h1 {
     font-family: Roboto;
     font-style: normal;
     font-weight: 500;
     font-size: 28px;
 }
 
-.Oferta p {
+.Offer p {
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
@@ -188,16 +198,17 @@ main {
     line-height: 120%;
 }
 
-.Preço {
+.Price {
     display: flex;
     gap: 17px;
 }
 
 .colorGray {
     color: #4E4E4E;
+    width: 49%;
 }
 
-.Preço h1:first-child {
+.Price h1:first-child {
     color: #DC6E05;
     font-family: Roboto;
     font-style: normal;
@@ -205,7 +216,7 @@ main {
     font-size: 32px;
 }
 
-.Preço h1:last-child{
+.Price h1:last-child{
     text-decoration: line-through;
     color: #4E4E4E;
     font-family: Roboto;
@@ -214,7 +225,7 @@ main {
     font-size: 32px;
 }
 
-.nav {
+.Nav {
     display: flex;
     flex-direction: column;
     border: 1px solid #686868;
@@ -224,25 +235,25 @@ main {
     padding: 32px;  
 }
 
-.Pedidos {
+.Requests {
     display: flex;
     flex-direction: column;
     width: 375px;
     height: 537px;
 }
 
-.Pedidos header {
+.Requests header {
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 375px;
     height: 55px;
     background: rgba(253, 215, 14, 0.2);
-    padding: 0 0 0 16px;
+    padding-left: 6%;
     gap: 6px;
 }
 
-.Pedidos header span:first-child {
+.Requests header span:first-child {
     font-family: Roboto;
     font-style: normal;
     font-weight: 500;
@@ -250,7 +261,7 @@ main {
     color: #4E4E4E;
 }
 
-.Pedidos header span:last-child {
+.Requests header span:last-child {
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
@@ -259,15 +270,15 @@ main {
 }
 
 .Item {
-    width:359px;
     height: 89px;
     display: flex;
     align-items: center;
     margin-top: 16px;
+   
 }
 
-.Item .Valor {
-    padding-left: 16px;
+.Item .Value {
+    padding-left: 6%;
     display: flex;
     width: 243.16px;
     height: 72px;
@@ -275,7 +286,7 @@ main {
     justify-content: space-between;
 }
 
-.adicionais {
+.Additionals {
     font-family: Roboto;
     font-style: normal;
     font-weight: 500;
@@ -283,7 +294,7 @@ main {
     color: #4E4E4E;    
 }
 
-.valores {
+.Values {
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
@@ -291,7 +302,7 @@ main {
     color: #F09035;
 }
 
-.Quantidade {
+.Quantity{
     width: 89px;
     height: 32px;
     border: 1px solid #F09035;
@@ -302,7 +313,7 @@ main {
     padding: 4px 4px 4px 4px;
 }
 
-.Quantidade button {
+.Quantity button {
     width: 24px;
     height: 24px;
     background-color: white;
@@ -314,29 +325,56 @@ main {
 }
 
 hr {
-    width: 343px;
-    left: 8px;
-    top: 96px;
+    width: 94%;
     border: 1px solid #E8A634;
+    margin-left: 6%;
 }
 
 
-.Talher {
+.Utensils {
     width: 375px;
     height: 55px;
     background: rgba(253, 215, 14, 0.2);
     padding: 8px 0 16px 16px;
-    
+    margin-top: 4%;
 }
-.Talher p {
+.Utensils p {
     font-family: Roboto;
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
     color: #4E4E4E;
 }
+.Radio {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 0;
+    visibility: hidden;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    color: #4E4E4E;
+}
+.Ask {
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
 
-.Adicionar {
+}
+.Ask1 {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+#radiobox1 {
+    background: yellow;
+    border-color: red;
+}
+
+.Increase {
     display: flex;
     width: 375px;
     height: 55px;
@@ -344,7 +382,7 @@ hr {
     gap: 16px;
 }
 
-.Adicionar .Quantidade {
+.Increase .Quantity{
     width: 140px;
     height: 40px;
 }
@@ -412,6 +450,12 @@ hr {
     display: flex;
     flex-direction: column;
     padding: 8px 11px 8px 11px;
+    
+    font-family: Roboto Condensed;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;        
+    color: #4E4E4E;
 }
 
 .ofertaBacon {
@@ -423,14 +467,14 @@ hr {
     gap: 4px;
 }
 
-.ofertaBacon h3 {
+.offerBacon h3 {
     font-family: Roboto Condensed;
     font-style: normal;
     font-weight: bold;
     font-size: 14px;
-    color: red;
+    color:  #BC2E31;
 }
-.ofertaBacon p {
+.offerBacon p {
     font-family: Roboto Condensed;
     font-style: normal;
     font-weight: normal;
@@ -446,7 +490,7 @@ ul {
     color: black;
 }
 
-#triangulo {
+#Triangle {
         margin-top: 80px;
         width: 0; 
         height: 0; 

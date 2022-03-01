@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="assets/Deliverize Logo 1 (1).png" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/DeliverizeLogoCaixa.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -18,48 +18,51 @@
 <body>
     <header>
         <div class="Container">
-            
-            <div class="Logo">
-                <img src="assets/Deliverize Logo 1 (1).png" alt="Logo-Caixa">
-                <img src="assets/Deliverize Logo 1.png" alt="Logo-deliverize">
+            <div class="arrowLeft"> <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.70492 1.41L6.29492 0L0.294922 6L6.29492 12L7.70492 10.59L3.12492 6L7.70492 1.41Z" fill="#686868"/>
+                </svg>
+                </div>   
+            <div class="Logo"> 
+                <img src="assets/DeliverizeLogoCaixa.png" alt="LogoCaixa" title="logoCaixa">
+                <img src="assets/DeliverizeLogo.png" alt="LogoDeliverize" title="logoDeliverize">
             </div>
 
             <div class="Inputs">
-                <div class="select">
-                    <p class="Entrega">Entrega:</p>
-                    <div class="Arrow"><img src="assets/keyboard_arrow_down_24px.svg" alt=""></div>
-                    <p class="Rua">R. Antônio Braune, 222</p>
+                <div class="Select">
+                    <p class="Delivery">Entrega:</p>
+                    <div class="Arrow"><img src="assets/keyboard_arrow_down_24px.svg" alt="setaBaixo"></div>
+                    <p class="Street">R. Antônio Braune, 222</p>
                 </div>
-                <input type="text" placeholder="Busque por estabelecimentos ou produtos" class="input">
-                <div class="Usuario">
-                    <div><img src="assets/account_circle_24px_outlined.svg" alt=""></div>
+                <input type="text" placeholder="Busque por estabelecimentos ou produtos" class="Input">
+                <input type="text" class="Input2" placeholder="Busque por...">
+                <div class="User">
+                    <div><img src="assets/account_circle_24px_outlined.svg" alt="circuloCarrinho"></div>
                     <div>
                         <p>Entrar</p>
                     </div>
                 </div>
-                <div class="Usuario">
-                    <div id="Circle" class="circle">0</div>
-                    <div class="carrinho"><img src="assets/shopping_cart_24px_outlined.svg" alt=""></div>
+                <div class="User">
+                    <div id="Circle" class="Circle">0</div>
+                    <div class="Car"><img src="assets/shopping_cart_24px_outlined.svg" alt="carrinho"></div>
                     <p>Carrinho</p>
                 </div>
-
             </div>
         </div>
     </header>
     <main>
-        <div class="Oferta">
-            <div><img src="assets/foto.png" alt=""></div>
+        <div class="Offer">
+            <div><img src="assets/foto.png" alt="hambúrguer"></div>
             <h1 class="colorGray">Oferta Picanha Cheddar Bacon</h1>
             <p class="colorGray">Hambúrguer de picanha, molho de picanha, cebola crispy, bacon,queijo cheddar, molho
                 cheddar e pão mix de gergelim</p>
-            <div class="Preço">
+            <div class="Price">
                 <h1>R$31,99</h1>
                 <h1>R$34,95</h1>
             </div>
         </div>
 
-        <div class="nav">
-            <div class="Pedidos">
+        <div class="Nav">
+            <div class="Requests">
                 <header>
                     <span>
                         <p>Adicionar ingredientes</p>
@@ -69,20 +72,19 @@
                     </span>
                 </header>
                 <div class="Item Cheddar">
-                    <div class="Valor">
-                        <p class="adicionais">Queijo Cheddar </p>
-                        <p class="valores">+ R$4,99</p>
-                        <hr>
+                    <div class="Value">
+                        <p class="Additionals" id="cheeseCheddar"></p>
+                        <p class="Values">+ R$4,99</p>
                     </div>
-                    <div class="Quantidade">
-                        <button onclick="Diminuir('queijoCheddar','rmvCheddar')">
+                    <div class="Quantity">
+                        <button onclick="decrease('queijoCheddar','rmvCheddar')">
                             <svg width="14" height="2" viewBox="0 0 14 2" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path d="M14 2H0V0H14V2Z" id='rmvCheddar' fill="#AEB6C1" />
                             </svg>
                         </button>
                         <p id='queijoCheddar'>0</p>
-                        <button onclick="Aumentar('queijoCheddar','rmvCheddar')">
+                        <button onclick="increase('queijoCheddar','rmvCheddar')">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <g id="add_24px">
@@ -91,27 +93,24 @@
                                 </g>
                             </svg>
                         </button>
-
+                        
                     </div>
-
-
-
                 </div>
+                <hr>
                 <div class="Item Crispy">
-                    <div class="Valor">
-                        <p class="adicionais">Cebola crispy</p>
-                        <p class="valores">+ R$1,50</p>
-                        <hr>
+                    <div class="Value">
+                        <p class="Additionals" id="cebola"></p>
+                        <p class="Values">+ R$1,50</p>
                     </div>
-                    <div class="Quantidade">
-                        <button onclick="Diminuir('cebolaCrispy','rmvCrispy')">
+                    <div class="Quantity">
+                        <button onclick="decrease('cebolaCrispy','rmvCrispy')">
                             <svg width="14" height="2" viewBox="0 0 14 2" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path d="M14 2H0V0H14V2Z" fill="#AEB6C1" id='rmvCrispy' />
                             </svg>
                         </button>
                         <p id='cebolaCrispy'>0</p>
-                        <button onclick="Aumentar('cebolaCrispy','rmvCrispy')">
+                        <button onclick="increase('cebolaCrispy','rmvCrispy')">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <g id="add_24px">
@@ -120,23 +119,22 @@
                             </svg>
                         </button>
                     </div>
-
                 </div>
+                <hr>
                 <div class="Item molhoCheddar">
-                    <div class="Valor">
-                        <p class="adicionais">Molho cheddar</p>
-                        <p class="valores">+ R$3,50</p>
-                        <hr>
+                    <div class="Value">
+                        <p class="Additionals" id="sauceCheddar"></p>
+                        <p class="Values">+ R$3,50</p>
                     </div>
-                    <div class="Quantidade">
-                        <button onclick="Diminuir('molhoCheddar','rmvMolhoCheddar')">
+                    <div class="Quantity">
+                        <button onclick="decrease('molhoCheddar','rmvMolhoCheddar')">
                             <svg width="14" height="2" viewBox="0 0 14 2" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path d="M14 2H0V0H14V2Z" fill="#AEB6C1" id='rmvMolhoCheddar' />
                             </svg>
                         </button>
                         <p id="molhoCheddar">0</p>
-                        <button onclick="Aumentar('molhoCheddar','rmvMolhoCheddar')">
+                        <button onclick="increase('molhoCheddar','rmvMolhoCheddar')">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <g id="add_24px">
@@ -147,21 +145,21 @@
                         </button>
                     </div>
                 </div>
+                <hr>
                 <div class="Item molhoPicanha">
-                    <div class="Valor">
-                        <p class="adicionais">Molho de picanha</p>
-                        <p class="valores">+ R$3,50</p>
-                        <hr>
+                    <div class="Value">
+                        <p class="Additionals" id="sauceMeat"></p>
+                        <p class="Values">+ R$3,50</p>
                     </div>
-                    <div class="Quantidade">
-                        <button onclick="Diminuir('molhoPicanha','rmvMolhoPicanha')">
+                    <div class="Quantity">
+                        <button onclick="decrease('molhoPicanha','rmvMolhoPicanha')">
                             <svg width="14" height="2" viewBox="0 0 14 2" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path d="M14 2H0V0H14V2Z" fill="#AEB6C1" id='rmvMolhoPicanha' />
                             </svg>
                         </button>
                         <p id="molhoPicanha">0</p>
-                        <button class="Aumentar" onclick="Aumentar('molhoPicanha','rmvMolhoPicanha')">
+                        <button onclick="increase('molhoPicanha','rmvMolhoPicanha')">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <g id="add_24px">
@@ -172,12 +170,24 @@
                         </button>
                     </div>
                 </div>
-                <div class="Talher">
+                <hr>
+                <div class="Utensils">
                     <p>Precisa de talher?</p>
                 </div>
+                    <div class="Radio" >
+                        <div class="Ask">
+                            <label for="radioBox1">Sim</label>
+                            <label for="radioBox1">Não</label>
+                            
+                        </div>
+                        <div class="Ask1">
+                            <input type="radio" name="radio" id="radioBox1">
+                            <input type="radio" name="radio" id="radioBox2">
+                        </div>
+                    </div>
             </div>
-            <div class="Adicionar">
-                <div class="Quantidade">
+            <div class="Increase">
+                <div class="Quantity">
                     <button onclick="rmvOrder()">
                         <svg width="14" height="2" viewBox="0 0 14 2" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M14 2H0V0H14V2Z" fill="#AEB6C1" id="rmvOrder" />
@@ -200,13 +210,13 @@
 
 
     <div class="modalOverlay">
-        <div id="triangulo"></div>
+        <div id="Triangle"></div>
         <div class="modal">
-            <div id="">
+            <div>
                 <h2 class="modalHeader">Adicionado com Sucesso</h2>
             </div>
             <div class="modalMain">
-                <div class="ofertaBacon">
+                <div class="offerBacon">
                     <h3>Oferta Cheddar Bacon</h3>
                     <p>Ingredientes:</p>
                     <ul id="lista">
@@ -217,10 +227,6 @@
             </div>
         </div>
     </div>
-
-
-
-
     <script src="script.js"></script>
 </body>
 

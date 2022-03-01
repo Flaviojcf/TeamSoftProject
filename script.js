@@ -2,12 +2,13 @@
 const gray = "#AEB6C1"
 const red = "#D80000"
 let total = 0
+let content = ''
 
 
 /* Função para diminuir a quantidade dos acompanhamentos  */
-function Diminuir(id,rmvSvgId) {
-    const elemento = document.getElementById(id)
-    const innerTextNumber = Number(elemento.innerText)
+function decrease(id,rmvSvgId) {
+    const element = document.getElementById(id)
+    const innerTextNumber = Number(element.innerText)
     const svgElement= document.getElementById(rmvSvgId)
     if (innerTextNumber === 0) {
         return
@@ -22,15 +23,15 @@ function Diminuir(id,rmvSvgId) {
         if(total === 7 ) {
             transformColorRed()
         }
-        elemento.innerText = newValue
+        element.innerText = newValue
     }
 }
 
 
 /* Função para aumentar a quantidade dos acompanhamentos  */
-function Aumentar(id,rmvSvgId) {
-    const elemento = document.getElementById(id)
-    const innerTextNumber = Number(elemento.innerText)
+function increase(id,rmvSvgId) {
+    const element = document.getElementById(id)
+    const innerTextNumber = Number(element.innerText)
     const svgElement= document.getElementById(rmvSvgId)
     if (total === 8) {
         transformColorGray()
@@ -47,7 +48,7 @@ function Aumentar(id,rmvSvgId) {
             svgElement.setAttribute('fill', red)
         }
         total += 1
-        elemento.innerText = newValue
+        element.innerText = newValue
         if (total === 8 ){
             transformColorGray()
         }
@@ -93,8 +94,8 @@ function transformMinusToRed() {
 
 /* Função responsável por diminuir a quantidade de itens do pedido */
 function rmvOrder() {
-    const elementoOrder = document.getElementById('numberOrder')
-    const innerTextNumber = Number(elementoOrder.innerText)
+    const elementOrder = document.getElementById('numberOrder')
+    const innerTextNumber = Number(elementOrder.innerText)
     const newValue = innerTextNumber - 1
     const svgElement= document.getElementById('rmvOrder')
     if(newValue === 0) {
@@ -103,20 +104,20 @@ function rmvOrder() {
     if(innerTextNumber === 0) {
         return
     }
-    elementoOrder.innerText = newValue
+    elementOrder.innerText = newValue
   
 }
 
 /* Função responsável por aumentar a quantidade de itens do pedido */
 function addOrder(){
-    const elementoOrder = document.getElementById('numberOrder')
-    const innerTextNumber = Number(elementoOrder.innerText)
+    const elementOrder = document.getElementById('numberOrder')
+    const innerTextNumber = Number(elementOrder.innerText)
     const newValue = innerTextNumber + 1
     const svgElement= document.getElementById('rmvOrder')
     if(newValue > 0) {
         svgElement.setAttribute('fill', red)
     }
-    elementoOrder.innerText = newValue
+    elementOrder.innerText = newValue
 }   
 
 
@@ -129,8 +130,8 @@ const Modal = {
     
     open() {
         const totalOrder = document.getElementById('Circle')
-        const elementoOrder = document.getElementById('numberOrder')
-        const innerTextNumber = Number(elementoOrder.innerText)
+        const elementOrder = document.getElementById('numberOrder')
+        const innerTextNumber = Number(elementOrder.innerText)
         totalOrder.innerText = innerTextNumber
         console.log(innerTextNumber)
 
@@ -150,18 +151,18 @@ const Modal = {
 
 /*Passando a lista dinâmica parao modal */
 function createElement(){
-    const listaAcompanhamentos = ['queijoCheddar','cebolaCrispy','molhoCheddar', 'molhoPicanha']
+    const listItens = ['queijoCheddar','cebolaCrispy','molhoCheddar', 'molhoPicanha']
     let lists = `<li>1 Carne 250gr </li>
                  <li>1 Bacon </li> `
     const list = document.getElementById('lista')
-    listaAcompanhamentos.forEach(id => {
-        const listaId = document.getElementById(id)
-        const quantidadeLista = Number(listaId.innerText)
-        if(quantidadeLista == 0 ) {
+    listItens.forEach(id => {
+        const listId = document.getElementById(id)
+        const quantList = Number(listId.innerText)
+        if(quantList == 0 ) {
             return
         }
         else {
-        lists += `<li>${quantidadeLista} ${changeName(id)}</li>  ` 
+        lists += `<li>${quantList} ${changeName(id)}</li>  ` 
         }
      })
   
@@ -181,3 +182,24 @@ function changeName(id) {
           return "Molho de picanha";
     }
  }
+
+
+ fetch('https://6077803e1ed0ae0017d6aea4.mockapi.io/test-frontend/products').then(resposta =>{
+    return resposta.json()}).then(cont=>{
+        content = cont
+        getApiItens()
+})
+
+function getApiItens(){
+    const cebola = document.getElementById('cebola')
+    const cheeseCheddar = document.getElementById('cheeseCheddar')
+    const sauceCheddar =  document.getElementById('sauceCheddar')
+    const sauceMeat = document.getElementById('sauceMeat')
+    
+
+    cheeseCheddar.innerText = content[0].ingredients[0].itens[0].nm_item
+    cebola.innerText = content[0].ingredients[0].itens[1].nm_item
+    sauceCheddar.innerText = content[0].ingredients[0].itens[2].nm_item
+    sauceMeat.innerText = content[0].ingredients[0].itens[3].nm_item
+}
+
