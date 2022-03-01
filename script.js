@@ -149,7 +149,7 @@ const Modal = {
     }
 }
 
-/*Passando a lista dinâmica parao modal */
+/*Passando a lista dinâmica para o modal */
 function createElement(){
     const listItens = ['queijoCheddar','cebolaCrispy','molhoCheddar', 'molhoPicanha']
     let lists = `<li>1 Carne 250gr </li>
@@ -183,6 +183,7 @@ function changeName(id) {
     }
  }
 
+/* Consumindo parte do api */
 
  fetch('https://6077803e1ed0ae0017d6aea4.mockapi.io/test-frontend/products').then(resposta =>{
     return resposta.json()}).then(cont=>{
