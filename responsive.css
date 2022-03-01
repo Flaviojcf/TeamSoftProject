@@ -18,6 +18,7 @@
     }
     .Select {
         width: 100px;
+        height: 42%;
     }
     .Input {
         display: none;
