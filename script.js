@@ -4,7 +4,6 @@ const red = "#D80000"
 let total = 0
 let content = ''
 
-
 /* Função para diminuir a quantidade dos acompanhamentos  */
 function decrease(id,rmvSvgId) {
     const element = document.getElementById(id)
