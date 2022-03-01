@@ -36,7 +36,6 @@ function increase(id,rmvSvgId) {
         transformColorGray()
         return
     }
-
     if (innerTextNumber === 8) {
         return
     }
