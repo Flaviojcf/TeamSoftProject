@@ -61,6 +61,7 @@ select{
     justify-content: center;
     padding: 4px 4px 0px 8px;
     gap: 2px;
+    cursor: pointer;
     
 }
 
@@ -79,12 +80,14 @@ select{
     font-weight: bold;
     font-size: 12px;
     color: #656363;
+    
 }
 
 .Arrow {
     display: flex;
     justify-content: flex-end;
     padding-right: 8.3px;
+    
 }
 
 
@@ -123,6 +126,7 @@ select{
     display: flex;
     gap: 8px;
     align-items: center;
+    cursor: pointer;
     
 }
 .User p {
